@@ -246,11 +246,14 @@
       content: "";
       position: absolute;
       bottom: 0;
-      width: 100%;
+      width: 0;
       height: 2px;
       background-color: $c-light;
-      display: none;
-      left: 0;
+      right: 0;
+      margin-right: auto;
+
+      transition: width 0.3s ease,
+                  opacity 0.3s ease;
 
       @media (max-width: $tablet) and (orientation: portrait) {
         left: 0;
@@ -267,7 +270,9 @@
 
     &.active {
       &::after {
-        display: block;
+        width: 100%;
+        left: 0;
+        margin-right: auto;
       }
     }
 
@@ -276,9 +281,16 @@
       color: $c-purple;
       outline: none;
 
+      transition: color 0.3s ease;
+
       &::after {
-        opacity: 1;
         background-color: $c-purple;
+        left: 0;
+        margin-right: auto;
+        width: 100%;
+
+        transition: width 0.3s ease,
+                    background-color 0.3s ease;
       }
     }
   }

@@ -17,6 +17,7 @@
   height: 4rem;
   color: $c-dark;
   border-radius: 50%;
+  transition: color 0.3s ease;
 
   @media (max-width: $tablet) and (orientation: portrait) {
     display: none;
@@ -35,6 +36,8 @@
     background-color: $c-light;
     border: 2px solid $c-light;
     z-index: -1;
+    transition: width 0.3s ease,
+                height 0.3s ease;
   }
 
   svg {
@@ -69,6 +72,7 @@
   }
 
   &:active,
+  &:focus,
   &:active:focus {
     color: $c-light;
 
@@ -87,7 +91,7 @@
   top: 100%;
   right: 0;
   margin-top: 1.5rem;
-  opacity: 0;
+  opacity: 1;
   pointer-events: none;
 
   @media (min-width: $stop-scaling) {
@@ -137,9 +141,43 @@
     pointer-events: auto;
   }
 
-  .social-block--active & {
-    opacity: 1;
+  a {
+    transform: translateY(10px);
+    transition: transform 0.3s ease;
+    transition-delay: 0.3s;
+  }
+
+  svg {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .social-block--active &,
+  .social-block__toggler:focus ~ & {
     pointer-events: auto;
+
+    a {
+      transform: translateY(0);
+    }
+
+    .social-block__link--fb,
+    .social-block__link--fb svg {
+      transition-delay: 0s;
+    }
+
+    .social-block__link--insta,
+    .social-block__link--insta svg {
+      transition-delay: 0.1s;
+    }
+
+    .social-block__link--vk,
+    .social-block__link--vk svg {
+      transition-delay: 0.2s;
+    }
+
+    svg {
+      opacity: 1;
+    }
   }
 
   li {
