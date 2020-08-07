@@ -30,7 +30,7 @@
     "stylelint": "9.10.x",
     "stylelint-config-htmlacademy": "0.1.x",
     "webpack": "4.41.5",
-    "webpack-cli": "3.3.11",
+    "webpack-cli": "^3.3.12",
     "webpack-dev-server": "3.10.3",
     "write-file-webpack-plugin": "4.5.1"
   },
@@ -62,5 +62,16 @@
     "normalize.css": "8.0.1",
     "swiper": "5.3.8",
     "three": "0.115.0"
-  }
+  },
+  "main": "gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vvs-code/847721-magic-vacation-1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vvs-code/847721-magic-vacation-1/issues"
+  },
+  "homepage": "https://github.com/vvs-code/847721-magic-vacation-1#readme"
 }
